@@ -1,7 +1,7 @@
 const Product = require("../models/Product");
 const path = require("path");
 const { unlink } = require("fs/promises");
-const Domain = "http://localhost:5000/uploads/";
+// const Domain = "http://localhost:5000/uploads/";
 
 const handleCreateProducts = async (req, res) => {
   const { name, description, price, quantity, category, image } = req.body;

@@ -23,7 +23,7 @@ const handlePaymentInitialization = async (req, res) => {
     const body = JSON.stringify({
       email: req.user?.email,
       amount: req.body.amount,
-      callback_url: `http://localhost:7000/api/payment/redirect?user=${req.user._id}`,
+      callback_url: `https://mini-mart-api.herokuapp.com/api/payment/redirect?user=${req.user._id}`,
     });
     let data = "";
 
@@ -100,11 +100,11 @@ const handlePaymentRedirect = async (req, res) => {
     const result = await handleGetPayment(reference);
     if (result.status) {
       await Cart.deleteMany({ user });
-      res.redirect("http://localhost:3000/success");
+      res.redirect("https://mini-mart.vercel.app/success");
     }
   } catch (error) {
     console.log(error.message);
-    res.redirect("http://localhost:3000/error?msg=" + error.message);
+    res.redirect("https://mini-mart.vercel.app/error?msg=" + error.message);
   }
 };
 
