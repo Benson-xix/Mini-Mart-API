@@ -19,7 +19,7 @@ const adminSchema = new mongoose.Schema({
 
     pic: {
         type: String,
-        default: "http://localhost:5000/img/user.png"
+        default: "https://mini-mart-api.herokuapp.com/img/user.png"
     }
 
 
