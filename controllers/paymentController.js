@@ -23,7 +23,7 @@ const handlePaymentInitialization = async (req, res) => {
     const body = JSON.stringify({
       email: req.user?.email,
       amount: req.body.amount,
-      callback_url: `https://mini-mart-api.herokuapp.com/api/payment/redirect?user=${req.user._id}`,
+      callback_url: `https://mini-mart-api.onrender.com/api/payment/redirect?user=${req.user._id}`,
     });
     let data = "";
 
